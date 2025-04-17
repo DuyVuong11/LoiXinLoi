@@ -42,3 +42,12 @@ cardValentine.addEventListener("click", () => {
         }, 1000)
     }
 })
+
+document.addEventListener('DOMContentLoaded', function() {
+    const dimensionsElement = document.getElementById('iphone13-dimensions');
+    const iphone13Height = 146.7; // mm
+    const iphone13Width = 71.5;   // mm
+    const iphone13Depth = 7.65;  // mm
+
+    dimensionsElement.textContent = `iPhone 13: Cao ${iphone13Height}mm, Rộng ${iphone13Width}mm, Dày ${iphone13Depth}mm`;
+});
