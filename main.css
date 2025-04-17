@@ -10,6 +10,8 @@ html, body {
     width: 100%;
 }
 
+
+
 .container {
     position: relative;
     height: 100%;
@@ -610,3 +612,94 @@ html, body {
         top: 50%;
     }
 }
+
+@media screen and (max-width: 430px) {
+    .boxTitle {
+      font-size: 36px;
+      flex-direction: column;
+      text-align: center;
+      line-height: 1.2;
+    }
+  
+    .openBtn {
+      font-size: 20px;
+    }
+  
+    .btnBox {
+      width: 90% !important;
+      height: 100px !important;
+    }
+  
+    .cardValentine, .cardValentine.active {
+      width: 95%;
+      height: 90%;
+      flex-direction: column;
+    }
+  
+    .cardValentine .left,
+    .cardValentine .right {
+      width: 100%;
+      height: 50%;
+      position: relative;
+      border-left: none;
+      border-right: none;
+      padding: 10px;
+    }
+  
+    .titleCard {
+      font-size: 36px;
+    }
+  
+    .rightContent {
+      font-size: 16px;
+      padding: 10px;
+    }
+  
+    .des {
+      font-size: 16px;
+    }
+  
+    .boxTitleCard, .boxTitleCard::before, .boxTitleCard::after {
+      width: 200px;
+      height: 200px;
+    }
+  
+    .boxTitleCard::before {
+      width: 180px;
+      height: 180px;
+    }
+  
+    .boxTitleCard::after {
+      width: 150px;
+      height: 150px;
+    }
+
+    .cardValentine.active.open {
+        height: 90%;
+    }
+
+    .cardValentine .left {
+        transform-origin: center;
+        left: 0;
+    }
+
+    .cardValentine.active.open .left {
+        transform: rotateY(-180deg) translateX(-50%);
+    }
+
+    .cardValentine .right {
+        left: 0;
+        transform: translateX(0);
+    }
+
+    .cardValentine.active.open .right {
+        transform: translateX(0);
+    }
+
+    .leftFront, .leftBack {
+        width: 100% !important;
+    }
+}
+    
+  
+  

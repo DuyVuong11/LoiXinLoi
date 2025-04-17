@@ -8,6 +8,7 @@ durationWrite = 50
 
 function effectWrite () {
     var boxLetter = document.querySelector(".letterContent")
+
     letterContentSplited = letterContent.split("")
     
     letterContentSplited.forEach((val, index) => {
@@ -32,6 +33,12 @@ openBtn.addEventListener("click", () => {
 var cardValentine = document.querySelector(".cardValentine")
 
 cardValentine.addEventListener("click", () => {
+
+    if(!cardValentine.classList.contains("active")) {
+        cardValentine.classList.add("active");
+        return;
+    }
+
     cardValentine.classList.toggle("open")
 
     if(cardValentine.className.indexOf("open") != -1) {
@@ -43,11 +50,22 @@ cardValentine.addEventListener("click", () => {
     }
 })
 
-document.addEventListener('DOMContentLoaded', function() {
-    const dimensionsElement = document.getElementById('iphone13-dimensions');
-    const iphone13Height = 146.7; // mm
-    const iphone13Width = 71.5;   // mm
-    const iphone13Depth = 7.65;  // mm
+cardValentine.addEventListener("touchend", (e) => {
+    e.preventDefault();
+    // Same logic as click
+    if(!cardValentine.classList.contains("active")) {
+        cardValentine.classList.add("active");
+        return;
+    }
+    
+    cardValentine.classList.toggle("open");
 
-    dimensionsElement.textContent = `iPhone 13: Cao ${iphone13Height}mm, Rộng ${iphone13Width}mm, Dày ${iphone13Depth}mm`;
+    if(cardValentine.className.indexOf("open") != -1) {
+        setTimeout(effectWrite, 500);
+    } else {
+        setTimeout(() => {
+            document.querySelector(".letterContent").innerHTML = "";
+        }, 1000);
+    }
 });
+
